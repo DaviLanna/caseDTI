@@ -1,0 +1,18 @@
+# Arquivos de Log
+*.log
+npm-debug.log*
+
+# Pasta de build do Maven
+/target/
+
+# Arquivos de compilação do Java
+*.class
+
+# Arquivos de IDEs
+.idea/
+*.iml
+*.iws
+.vscode/
+
+# Banco de dados local
+*.db
