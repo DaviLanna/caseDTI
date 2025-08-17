@@ -1,47 +1,110 @@
-Gerenciador de Filmes em Console
+# 🎬 Gerenciador de Filmes em Console
 
-Recurso Escolhido: Filme
+Um sistema simples de cadastro, consulta, atualização e remoção de filmes, executado via terminal, utilizando Java 17, SQLite e Maven.
 
-O recurso central da aplicação é o Filme, modelado com os seguintes atributos:
+## Sumário
 
-Atributos Obrigatórios:
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Executar](#como-executar)
+- [Scripts e Banco de Dados](#scripts-e-banco-de-dados)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-Título: String
+---
 
-Diretor: String
+## Sobre o Projeto
 
-Ano de Lançamento: int
+Este projeto é um gerenciador de filmes para uso em linha de comando. Permite cadastrar, listar, buscar, atualizar e remover filmes de um banco de dados SQLite local. O objetivo é demonstrar o uso de Java moderno, boas práticas de organização de código, persistência de dados e integração com Maven.
 
-Atributos Opcionais:
+## Funcionalidades
 
-Data em que foi assistido: LocalDate - A data específica em que o usuário assistiu ao filme (armazenado como TEXT no formato "AAAA-MM-DD" no banco de dados).
+- Listar todos os filmes cadastrados
+- Buscar filme por ID
+- Cadastrar novo filme
+- Atualizar informações de um filme existente
+- Remover filme do banco de dados
 
-Nota: Float - Uma nota de 0 a 10 atribuída pelo usuário (armazenada como REAL no banco de dados).
+### Modelo de Filme
 
-Tecnologias Utilizadas:
+- *Obrigatórios:*
+	- Título (String)
+	- Diretor (String)
+	- Ano de Lançamento (int)
+- *Opcionais:*
+	- Data em que foi assistido (LocalDate, formato AAAA-MM-DD)
+	- Nota (Float, de 0 a 10)
 
-Linguagem Principal: Java 17
+## Tecnologias Utilizadas
 
-Banco de Dados: SQLite
+- *Java 17*
+- *SQLite* (persistência local)
+- *Apache Maven* (build e dependências)
+- *JUnit 5* (testes)
+- *Visual Studio Code* (IDE recomendada)
 
-Gerenciador de Build e Dependências: Apache Maven
+## Estrutura do Projeto
 
-IDE de Desenvolvimento: Visual Studio Code
 
-Decisões das Tecnologias:
+caseDTI/
+│
+├── database/
+│   └── schema.sql
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/dti/filmes/
+│               ├── dao/FilmeDAO.java
+│               ├── db/ConexaoSQLite.java
+│               ├── main/App.java
+│               └── model/Filme.java
+├── filmes.db
+├── pom.xml
+└── README.md
 
-Escolhi a linguagem Java por dois fatores principais: ser orientada a objetos e minha familiaridade pessoal com a linguagem. Já cheguei a utilizá-la em um projeto similar do qual participei na faculdade, onde também deveríamos manipular dados e construir um back-end para uma aplicação, utilizando principalmente Java.
 
-Para a estrutura e o gerenciamento do projeto, optei pelo Apache Maven. O uso do Maven foi importante principalmente pelo gerenciamento de dependências. Em vez de adicionar bibliotecas externas (arquivos .jar) manualmente ao projeto, o Maven permite que elas sejam declaradas de forma simples no arquivo pom.xml. Neste projeto, por exemplo, a dependência do driver JDBC do SQLite foi incluída com apenas algumas linhas, e o Maven se encarregou de baixar e disponibilizar a biblioteca automaticamente.
+## Como Executar
 
-Como Configurar e Executar:
+1. *Pré-requisitos:*
+	 - Java JDK 17+
+	 - Apache Maven
 
-Para executar o projeto, é necessário ter o seguinte software instalado:
+2. *Clone o repositório:*
+	 sh
+	 git clone https://github.com/DaviLanna/caseDTI.git
+	 cd caseDTI
+	 
 
-Java (JDK) - Versão 17 ou superior.
+3. *Instale as dependências:*
+	 sh
+	 mvn install
+	 
 
-Apache Maven.
+4. *Execute a aplicação:*
+	 - Via Maven:
+		 sh
+		 mvn exec:java -Dexec.mainClass="com.dti.filmes.main.App"
+		 
+	 - Ou gere o JAR executável:
+		 sh
+		 mvn package
+		 java -jar target/gerenciador-filmes-console-1.0-SNAPSHOT-jar-with-dependencies.jar
+		 
 
-VSCode (IDE recomendada).
+5. *Utilize o menu interativo no terminal para gerenciar seus filmes.*
 
-Clone o repositório do projeto. O VSCode vai requisitar a instalação das dependências necessárias incluídas no pom.xml (Se não baixa-las automaticamente, execute o comando "mvn install" no terminal); após isso, apenas rode o arquivo App.java. Um menu de opções aparecerá no terminal, e o usuário poderá escolher suas opções de forma intuitiva.
+## Scripts e Banco de Dados
+
+- O banco de dados SQLite (filmes.db) é criado automaticamente na raiz do projeto.
+- O script de criação da tabela está em database/schema.sql.
+- Não é necessário configurar nada manualmente: a aplicação garante a existência da tabela ao iniciar.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## Licença
+
+Este projeto está sob a licença MIT.
