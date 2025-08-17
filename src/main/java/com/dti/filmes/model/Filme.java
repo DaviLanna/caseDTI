@@ -11,7 +11,7 @@ public class Filme {
     private LocalDate dataAssistido;
     private Double nota;
 
-    // Getters e Setters (iguais aos de antes)
+    // Métodos Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getTitulo() { return titulo; }
@@ -27,7 +27,6 @@ public class Filme {
 
     @Override
     public String toString() {
-        // A CORREÇÃO ESTÁ AQUI: 'AAAA' foi trocado por 'yyyy'
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         
         String dataFormatada = (dataAssistido != null) ? dataAssistido.format(formatter) : "Não assistido";
