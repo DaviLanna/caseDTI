@@ -42,7 +42,6 @@ Este projeto é um gerenciador de filmes para uso em linha de comando. Permite c
 - *Java 17*
 - *SQLite* (persistência local)
 - *Apache Maven* (build e dependências)
-- *JUnit 5* (testes)
 - *Visual Studio Code* (IDE recomendada)
 
 ## Estrutura do Projeto
