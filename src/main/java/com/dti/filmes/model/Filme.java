@@ -5,14 +5,13 @@ import java.time.format.DateTimeFormatter;
 
 public class Filme {
     private int id;
-    private String titulo; // Obrigatório
-    private String diretor; // Obrigatório
-    private int anoLancamento; // Obrigatório
-    private LocalDate dataAssistido; // Opcional
-    private Double nota; // Opcional
+    private String titulo;
+    private String diretor;
+    private int anoLancamento;
+    private LocalDate dataAssistido;
+    private Double nota;
 
-    // Métodos Getters e Setters
-
+    // Getters e Setters (iguais aos de antes)
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getTitulo() { return titulo; }
@@ -28,7 +27,9 @@ public class Filme {
 
     @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/aaaa");
+        // A CORREÇÃO ESTÁ AQUI: 'AAAA' foi trocado por 'yyyy'
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
         String dataFormatada = (dataAssistido != null) ? dataAssistido.format(formatter) : "Não assistido";
         String notaFormatada = (nota != null) ? String.format("%.1f/10", nota) : "Sem nota";
 
