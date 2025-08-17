@@ -47,7 +47,7 @@ Este projeto é um gerenciador de filmes para uso em linha de comando. Permite c
 
 ## Estrutura do Projeto
 
-
+```
 caseDTI/
 │
 ├── database/
@@ -63,7 +63,7 @@ caseDTI/
 ├── filmes.db
 ├── pom.xml
 └── README.md
-
+```
 
 ## Como Executar
 
