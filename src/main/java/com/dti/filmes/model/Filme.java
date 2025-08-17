@@ -28,7 +28,7 @@ public class Filme {
 
     @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/aaaa");
         String dataFormatada = (dataAssistido != null) ? dataAssistido.format(formatter) : "Não assistido";
         String notaFormatada = (nota != null) ? String.format("%.1f/10", nota) : "Sem nota";
 

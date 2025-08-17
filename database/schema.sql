@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS filmes (
     titulo TEXT NOT NULL,
     diretor TEXT NOT NULL,
     ano_lancamento INTEGER NOT NULL,
-    data_assistido TEXT, -- Formato YYYY-MM-DD (Opcional)
+    data_assistido TEXT, -- Formato aaaa-mm-dd (Opcional)
     nota REAL          -- Nota de 0 a 10 (Opcional)
 );
