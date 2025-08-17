@@ -91,6 +91,6 @@ caseDTI/
 
 ## Scripts e Banco de Dados
 
-- O banco de dados SQLite (filmes.db) é criado automaticamente na raiz do projeto.
+- O banco de dados SQLite (filmes.db) é criado automaticamente na pasta database.
 - O script de criação da tabela está em database/schema.sql.
 - Não é necessário configurar nada manualmente: a aplicação garante a existência da tabela ao iniciar.
